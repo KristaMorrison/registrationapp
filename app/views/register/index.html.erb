@@ -1,6 +1,7 @@
 <h1>Registration Page</h1>
 
-<form>
+<!-- Form for user input; submitting the form calls the registeruser method in the controller -->
+<form action = "/register/registeruser" method = "post">
   <label for="first_name">First Name:</label>
   <input type="text" name="first_name"/><br>
   <label for="last_name">Last Name:</label>
@@ -24,9 +25,10 @@
   <input type="text" name="phone3"/><br>
   <label for="email">Email:</label>
   <input type="text" name="email"/><br><br>
-  <label for="username">Username:</label>
+  <label for="username">*Username:</label>
   <input type="text" name="username" required/><br>
-  <label for="password">Password:</label>
-  <input type="text" name="password" required/><br><br>
+  <label for="password">*Password:</label>
+  <input type="text" name="password" required/><br>
+  * Required Fields<br><br>
   <input type="submit" value="Submit"/>
 </form>
