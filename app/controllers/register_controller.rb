@@ -65,7 +65,7 @@ class RegisterController < ApplicationController
   #Method to find the user in the database
   def welcome
     @user = User.find_by id: session[:id]
-  
+    @phones = @user.phones
   end
 
 end
