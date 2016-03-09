@@ -1,26 +1,40 @@
 class RegisterController < ApplicationController
   def index
-
   end
-
+  #method to store user input into the database. If a field is empty, don't save an empty string into the database.
   def registeruser
     user = User.new
-    number = Phone.new
-    user.first = params[:first_name]
-    user.last = params[:last_name]
-    user.street = params[:street]
-    user.city = params[:city]
-    user.state = params[:state]
-    user.zip = params[:zip]
-    user.country = params[:country]
-    user.email = params[:email]
+    user.first = params[:first_name] unless params[:first_name].strip.empty?
+    user.last = params[:last_name] unless params[:last_name].strip.empty?
+    user.street = params[:street] unless params[:street].strip.empty?
+    user.city = params[:city] unless params[:city].strip.empty?
+    user.state = params[:state] unless params[:state].strip.empty?
+    user.zip = params[:zip] unless params[:zip].strip.empty?
+    user.country = params[:country] unless params[:country].strip.empty?
+    user.email = params[:email] unless params[:email].strip.empty?
     user.username = params[:username]
     user.password = params[:password]
     user.save
-    number.phone = params[:phone1]
-    number.user_id = user.id
-    number.save
-    redirect_to '/'
+    #Only add a phone number to the database if a number is entered.
+    if !params[:phone1].strip.empty?
+      number = Phone.new
+      number.phone = params[:phone1]
+      number.user_id = user.id
+      number.save
+    end
+    if !params[:phone2].strip.empty?
+      number = Phone.new
+      number.phone = params[:phone2]
+      number.user_id = user.id
+      number.save
+    end
+    if !params[:phone3].strip.empty?
+      number = Phone.new
+      number.phone = params[:phone3]
+      number.user_id = user.id
+      number.save
+    end
+    #After registration is complete, user is taken to a confirmation page.
+    redirect_to '/register/confirmation'
   end
-
 end
