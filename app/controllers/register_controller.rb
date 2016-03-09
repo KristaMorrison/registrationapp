@@ -57,15 +57,15 @@ class RegisterController < ApplicationController
       redirect_to '/register/login'
     #if everything is valid redirect to welcome page and store user id as a cookie
     else
-      cookies[:id] = @user.id
+      session[:id] = @user.id
       redirect_to '/register/welcome'
     end
   end
 
   #Method to find the user in the database
   def welcome
-    @user = User.find_by id: cookies[:id]
-
+    @user = User.find_by id: session[:id]
+  
   end
 
 end
