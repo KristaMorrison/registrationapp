@@ -5,6 +5,12 @@ Rails.application.routes.draw do
 
   get 'register/confirmation'
 
+  get 'register/login'
+
+  get 'register/welcome'
+
+  post 'register/userlogin'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,14 @@
+<h1>Login Page</h1>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+<form action="/register/userlogin" method="post">
+  <label for="username">Enter Username:</label>
+  <input type="text" name="username" required><br>
+  <label for="password">Enter Password:</label>
+  <input type="text" name="password" required><br>
+  <input type="submit" name="Login">
+</form>
+
+<p>Not a registered user? Click <a href="/">here</a> to register</p>

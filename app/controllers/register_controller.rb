@@ -37,4 +37,24 @@ class RegisterController < ApplicationController
     #After registration is complete, user is taken to a confirmation page.
     redirect_to '/register/confirmation'
   end
+
+  def login
+
+  end
+
+  def userlogin
+    @user = User.find_by username: params[:username]
+    if @user.nil?
+      flash[:notice] = "Username is not valid"
+      redirect_to '/register/login'
+    elsif @user.password != params[:password]
+      flash[:notice] = "Password is not valid"
+      redirect_to '/register/login'
+    else
+      session[:user] = @user.first.to_yaml
+      redirect_to '/register/welcome'
+    end
+  end
+
+  
 end
