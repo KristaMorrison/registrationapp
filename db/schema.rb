@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160308182325) do
     t.string   "first"
     t.string   "last"
     t.string   "street"
+    t.string   "street_two"
     t.string   "city"
     t.string   "state"
     t.integer  "zip"

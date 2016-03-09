@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first
       t.string :last
       t.string :street
+      t.string :street_two
       t.string :city
       t.string :state
       t.integer :zip
