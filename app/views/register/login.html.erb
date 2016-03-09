@@ -1,8 +1,10 @@
 <h1>Login Page</h1>
+<!--flash notice if input is invalid-->
 <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 
+<!--Login form for username and password-->
 <form action="/register/userlogin" method="post">
   <label for="username">Enter Username:</label>
   <input type="text" name="username" required><br>

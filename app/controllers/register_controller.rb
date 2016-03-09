@@ -1,4 +1,5 @@
 class RegisterController < ApplicationController
+  #Method that runs when index page first loads
   def index
   end
   #method to store user input into the database. If a field is empty, don't save an empty string into the database.
@@ -38,23 +39,33 @@ class RegisterController < ApplicationController
     redirect_to '/register/confirmation'
   end
 
+  #Method that runs when the login page first loads
   def login
-
   end
 
+  #Method that allows user to log in - Checks database to ensure user info is valid - This method only runs when the user clicks submit on the login page
   def userlogin
+    #Search the database for a record that matches the name input by the user
     @user = User.find_by username: params[:username]
+    #if the username input is invalid flash notice appears and redirects back to login
     if @user.nil?
       flash[:notice] = "Username is not valid"
       redirect_to '/register/login'
+    #if password is invalid flash notice appears and redirects back to login
     elsif @user.password != params[:password]
       flash[:notice] = "Password is not valid"
       redirect_to '/register/login'
+    #if everything is valid redirect to welcome page and store user id as a cookie
     else
-      session[:user] = @user.first.to_yaml
+      cookies[:id] = @user.id
       redirect_to '/register/welcome'
     end
   end
 
-  
+  #Method to find the user in the database
+  def welcome
+    @user = User.find_by id: cookies[:id]
+
+  end
+
 end
