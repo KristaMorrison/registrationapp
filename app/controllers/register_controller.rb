@@ -7,16 +7,19 @@ class RegisterController < ApplicationController
     if !(User.find_by username: params[:username]).nil?
       flash[:notice] = "Username taken, try another"
       redirect_to "/"
+    elsif params[:first_name].strip.empty? || params[:last_name].strip.empty? || params[:street].strip.empty? || params[:city].strip.empty? || params[:state].strip.empty? || params[:zip].strip.empty? || params[:country].strip.empty? || params[:email].strip.empty?
+      flash[:notice] = "Invalid characters entered"
+      redirect_to "/"
     else
       user = User.new
-      user.first = params[:first_name] unless params[:first_name].strip.empty?
-      user.last = params[:last_name] unless params[:last_name].strip.empty?
-      user.street = params[:street] unless params[:street].strip.empty?
-      user.city = params[:city] unless params[:city].strip.empty?
-      user.state = params[:state] unless params[:state].strip.empty?
-      user.zip = params[:zip] unless params[:zip].strip.empty?
-      user.country = params[:country] unless params[:country].strip.empty?
-      user.email = params[:email] unless params[:email].strip.empty?
+      user.first = params[:first_name]
+      user.last = params[:last_name]
+      user.street = params[:street]
+      user.city = params[:city]
+      user.state = params[:state]
+      user.zip = params[:zip]
+      user.country = params[:country]
+      user.email = params[:email]
       user.username = params[:username]
       user.password = params[:password]
       user.save

@@ -35,6 +35,22 @@ RSpec.feature "Users", type: :feature do
       expect(User.first).to be_a(User)
       expect(User.first.first).to eq('Bob')
     end
+    # it "wont allow spaces as characters for user information" do
+    #   visit '/'
+    #   fill_in 'first_name', with: '     '
+    #   fill_in 'last_name', with: '     '
+    #   fill_in 'street', with: '     '
+    #   fill_in 'city', with: '     '
+    #   fill_in 'state', with: '     '
+    #   fill_in 'zip', with: '92101'
+    #   fill_in 'country', with: '     '
+    #   fill_in 'phone1', with: '     '
+    #   fill_in 'email', with: '     '
+    #   fill_in 'username', with: '     '
+    #   fill_in 'password', with: '     '
+    #   click_button 'Submit'
+    #   expect(page).to have_content("Test content")
+    # end
   end
 
   #helper function to fill out the form and submit it
