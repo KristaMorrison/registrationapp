@@ -1,5 +1,10 @@
 <h1>Registration Page</h1>
 
+<!--flash notice if username is taken-->
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
 <!-- Form for user input; submitting the form calls the registeruser method in the controller -->
 <form action = "/register/registeruser" method = "post">
   <label for="first_name">*First Name:</label>
