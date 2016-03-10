@@ -1,0 +1,12 @@
+label {
+    display: inline-block;
+    width:100px;
+    text-align: right;
+}
+
+h6{
+  color: red;
+  display: inline-block;
+  width:100px;
+  text-align: right;
+}
