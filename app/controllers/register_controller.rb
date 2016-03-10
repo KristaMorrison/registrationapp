@@ -4,9 +4,12 @@ class RegisterController < ApplicationController
   end
 
   #method to store user input into the database. If a field is empty, don't save an empty string into the database.
-  def registeruser
+  def register_user
     if !(User.find_by username: params[:username]).nil?
       flash[:notice] = "Username taken, try another"
+      redirect_to "/"
+    elsif validate_password params[:password]
+      flash[:notice] = "Please enter a valid password"
       redirect_to "/"
     elsif params[:first_name].strip.empty? || params[:last_name].strip.empty? || params[:street].strip.empty? || params[:city].strip.empty? || params[:state].strip.empty? || params[:zip].strip.empty? || params[:country].strip.empty? || params[:email].strip.empty?
       flash[:notice] = "Invalid characters entered"
@@ -53,7 +56,7 @@ class RegisterController < ApplicationController
   end
 
   #Method that allows user to log in - Checks database to ensure user info is valid - This method only runs when the user clicks submit on the login page
-  def userlogin
+  def user_login
     #Search the database for a record that matches the name input by the user
     @user = User.find_by username: params[:username]
     #if the username input is invalid flash notice appears and redirects back to login
@@ -83,4 +86,31 @@ class RegisterController < ApplicationController
     redirect_to "/"
   end
 
+#Helper methods for validating password --------------------------------------
+  def does_not_contain_special str
+    !(str.include?("#") || str.include?("!") || str.include?("$"))
+  end
+
+  def contains_digit str
+    ("0".."9").each do |x|
+      result = str.include?(x)
+      if result
+        true
+      end
+    end
+    false
+  end
+
+  def check_case str
+    if str.upcase == str || str.downcase == str
+      false
+    else
+      true
+    end
+  end
+
+  def validate_password password
+    does_not_contain_special(password) || !check_case(password) || !contains_digit(password)
+  end
+#-----------------------------------------------------------------------------
 end

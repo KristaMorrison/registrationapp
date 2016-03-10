@@ -1,5 +1,5 @@
 .container {
-    width: 150px;
+    width: 200px;
     clear: both;
 }
 .container input {
@@ -12,4 +12,14 @@ h6{
   /*display: inline-block;
   width:150px;
   text-align: right;*/
+}
+
+h5, li{
+  color: gray;
+  font-size: 10pt;
+  margin: 0;
+}
+
+ul {
+  margin: 0px;
 }

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'register/index'
 
-  post 'register/registeruser'
+  post 'register/register_user'
 
   get 'register/confirmation'
 
@@ -9,9 +9,10 @@ Rails.application.routes.draw do
 
   get 'register/welcome'
 
-  post 'register/userlogin'
+  post 'register/user_login'
 
   get 'register/logout'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

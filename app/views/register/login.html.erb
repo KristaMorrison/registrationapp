@@ -1,4 +1,3 @@
- <%= stylesheet_link_tag "filename" %>
 <h1>Login Page</h1>
 <!--flash notice if input is invalid-->
 <% if flash[:notice] %>
@@ -7,11 +6,11 @@
 
 <!--Login form for username and password-->
 <div class="container">
-  <form action="/register/userlogin" method="post">
+  <form action="/register/user_login" method="post">
     <label for="username">Enter Username:</label>
     <input type="text" name="username" required><br>
     <label for="password">Enter Password:</label>
-    <input type="text" name="password" required><br>
+    <input type="password" name="password" required><br><br>
     <input type="submit" name="Login">
   </form>
 </div>

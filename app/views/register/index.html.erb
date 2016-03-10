@@ -7,7 +7,7 @@
 
 <!-- Form for user input; submitting the form calls the registeruser method in the controller -->
 <div class="container">
-  <form action = "/register/registeruser" method = "post">
+  <form action = "/register/register_user" method = "post">
     <label for="first_name">*First Name:</label>
     <input type="text" name="first_name" required/><br>
     <label for="last_name">*Last Name:</label>
@@ -27,15 +27,21 @@
     <label for="phone1">Phone 1:</label>
     <input type="text" name="phone1" placeholder="555-555-5555"/><br>
     <label for="phone2">Phone 2:</label>
-    <input type="text" name="phone2"/><br>
+    <input type="text" name="phone2" placeholder="555-555-5555"/><br>
     <label for="phone3">Phone 3:</label>
-    <input type="text" name="phone3"/><br>
+    <input type="text" name="phone3" placeholder="555-555-5555"/><br>
     <label for="email">*Email:</label>
     <input type="text" name="email" required/><br><br>
     <label for="username">*Username:</label>
     <input type="text" name="username" required/><br>
     <label for="password">*Password:</label>
-    <input type="text" name="password" required/><br>
+    <input type="password" name="password" required min="6"/>
+    <h5>Password must:</h5>
+    <ul>
+      <li>Be at least 6 characters</li>
+      <li>Include $, #, and/or !</li>
+      <li>Include at least one uppercase and lowercase letter.</li>
+    </ul>
     <h6>* Indicates a required field</h6><br>
     <input type="submit" value="Submit"/>
   </form>

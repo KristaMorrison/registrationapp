@@ -27,8 +27,8 @@ RSpec.feature "Users", type: :feature do
   describe "When a user submits information, it is saved to the user table" do
     it "should add a record to the users table when the user submits info, excluding phone numbers" do
       fill_form
-      expect(User.first).to be_a(User)
-      expect(User.first.first).to eq('Bob')
+      expect(User.last).to be_a(User)
+      expect(User.last.first).to eq('Bob')
     end
     it "wont allow spaces as characters for user information" do
       visit '/'
@@ -61,7 +61,7 @@ RSpec.feature "Users", type: :feature do
     fill_in 'phone1', with: '555-555-5555'
     fill_in 'email', with: 'bob@home.com'
     fill_in 'username', with: 'BobSmith1'
-    fill_in 'password', with: 'pass123word'
+    fill_in 'password', with: '!Pass123word'
     click_button 'Submit'
   end
 end
