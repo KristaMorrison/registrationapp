@@ -1,12 +1,15 @@
-label {
-    display: inline-block;
-    width:100px;
-    text-align: right;
+.container {
+    width: 150px;
+    clear: both;
+}
+.container input {
+    width: 100%;
+    clear: both;
 }
 
 h6{
   color: red;
-  display: inline-block;
-  width:100px;
-  text-align: right;
+  /*display: inline-block;
+  width:150px;
+  text-align: right;*/
 }
