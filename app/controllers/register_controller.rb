@@ -2,6 +2,7 @@ class RegisterController < ApplicationController
   #Method that runs when index page first loads
   def index
   end
+
   #method to store user input into the database. If a field is empty, don't save an empty string into the database.
   def registeruser
     if !(User.find_by username: params[:username]).nil?
@@ -76,6 +77,7 @@ class RegisterController < ApplicationController
     @phones = @user.phones
   end
 
+  #Method which runs when the user clicks the logout button. The session is reset, and the user is redirected to the index registration page
   def logout
     reset_session
     redirect_to "/"
