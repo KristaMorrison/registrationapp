@@ -92,25 +92,15 @@ class RegisterController < ApplicationController
   end
 
   def contains_digit str
-    ("0".."9").each do |x|
-      result = str.include?(x)
-      if result
-        true
-      end
-    end
-    false
+    str =~ /\d/
   end
 
   def check_case str
-    if str.upcase == str || str.downcase == str
-      false
-    else
-      true
-    end
+    str.upcase == str || str.downcase == str
   end
 
   def validate_password password
-    does_not_contain_special(password) || !check_case(password) || !contains_digit(password)
+    does_not_contain_special(password) || check_case(password) || !contains_digit(password)
   end
 #-----------------------------------------------------------------------------
 end
