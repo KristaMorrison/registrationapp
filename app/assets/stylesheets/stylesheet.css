@@ -14,22 +14,21 @@
     margin-bottom: 6px;
 }
 
+
 .container .logininput {
   margin-top: 1px;
   margin-bottom: 10px;
+  width: 100%;
 }
 
-#one{
+
+#one, #two{
   background-color: white;
   border: none;
-  font-size: 15pt;
+  font-size: 10pt;
+  padding: 5px;
 }
 
-#two{
-  background-color: white;
-  border: none;
-  font-size: 15pt;
-}
 
 #green{
    display: block;
@@ -76,4 +75,8 @@ ul {
 
 p {
   text-align: center;
+}
+
+a{
+  font-size: 14pt;
 }
