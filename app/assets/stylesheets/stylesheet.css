@@ -77,6 +77,11 @@ p {
   text-align: center;
 }
 
+.notice {
+  text-align: center;
+  color: red;
+}
+
 a{
   font-size: 14pt;
 }
