@@ -1,17 +1,67 @@
 .container {
-    width: 200px;
+    width: 30%;
     clear: both;
+    margin:auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Quicksand', sans-serif;
 }
 .container input {
     width: 100%;
     clear: both;
+    margin-top: -3px;
+    margin-bottom: 6px;
+}
+
+.container .logininput {
+  margin-top: 1px;
+  margin-bottom: 10px;
+}
+
+#one{
+  background-color: white;
+  border: none;
+  font-size: 15pt;
+}
+
+#two{
+  background-color: white;
+  border: none;
+  font-size: 15pt;
+}
+
+#green{
+   display: block;
+   margin: 0 auto;
+   min-width: 50%;
+   max-width: 60%;
+   padding-left: 1px;
+   padding-right: 1px;
+}
+
+#logoutbutton{
+  border:none;
+  display: block;
+  margin: 0 auto;
+  min-width: 15%;
+  max-width: 17%;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 h6{
   color: red;
-  /*display: inline-block;
-  width:150px;
-  text-align: right;*/
+
 }
 
 h5, li{
@@ -22,4 +72,8 @@ h5, li{
 
 ul {
   margin: 0px;
+}
+
+p {
+  text-align: center;
 }

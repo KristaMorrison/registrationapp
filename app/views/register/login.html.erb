@@ -5,14 +5,20 @@
   <% end %>
 
 <!--Login form for username and password-->
-<div class="container">
-  <form action="/register/user_login" method="post">
-    <label for="username">Enter Username:</label>
-    <input type="text" name="username" required><br>
-    <label for="password">Enter Password:</label>
-    <input type="password" name="password" required><br><br>
-    <input type="submit" name="Login" value="Login">
-  </form>
+
+<div class="container" id="logincontainer">
+    <form action="/register/user_login" method="post">
+      <div class="input-group input-group-sm">
+        <span class="input-group-addon glyphicon glyphicon-user" id="one"></span>
+        <input type="text" class="form-control logininput" placeholder="Username" aria-describedby="sizing-addon3" name="username" required>
+      </div>
+      <div class="input-group input-group-sm">
+        <span class="input-group-addon glyphicon glyphicon-lock" id="two"></span>
+        <input type="password" class="form-control logininput" placeholder="Password" aria-describedby="sizing-addon3" name="password" required>
+      </div>
+
+      <input type="submit" name="Login" value="Login" class="btn btn-success" id="green">
+    </form>
 </div>
 
 <p>Not a registered user? Click <a href="/">here</a> to register</p>

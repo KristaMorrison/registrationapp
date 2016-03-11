@@ -1,18 +1,21 @@
 
 <h1>Welcome <%= @user.username %>! </h1>
-<%= @fullname = @user.first + " " + @user.last%><br>
-<%= @user.street%><br>
-<%= @user.city + ", " + @user.state + " " + @user.zip.to_s%><br>
-<%= @user.country%><br>
-<%= @user.email%><br>
-<% if @phones.empty? %>
-  <%= "No Phones entered" %>
-<% else %>
-  <% @phones.each do |x| %>
-  <%= x.phone %><br>
+<div class="container">
+  <%= @fullname = @user.first + " " + @user.last%><br>
+  <%= @user.street%><br>
+  <%= @user.city + ", " + @user.state + " " + @user.zip.to_s%><br>
+  <%= @user.country%><br>
+  <%= @user.email%><br>
+  <% if @phones.empty? %>
+    <%= "No Phones entered" %>
+  <% else %>
+    <% @phones.each do |x| %>
+    <%= x.phone %><br>
+    <% end %>
   <% end %>
-<% end %>
-
-<form action="/register/logout" method="get">
-  <input type="submit" name="logout" value="Log Out">
-</form>
+</div>
+<div class="container" id="logoutbutton">
+  <form action="/register/logout" method="get">
+    <input type="submit" name="logout" value="Log Out" class="btn btn-warning">
+  </form>
+</div>
