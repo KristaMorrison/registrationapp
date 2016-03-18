@@ -1,28 +1,9 @@
 == README
+This registration app was built as part of my eductation at LEARN academy.  It was completed as a pair programming project with Amir Nazemian and Jon Richardson.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+The challenge was to create an app where a user could register with their personal info, log in with a username and password, and successfully log out of the app.  This app was also built with rspec testing to ensure it's functionality.  Some key components of the app include:
+- The user must register with valid credentials, which are stored in a user database
+- The user may not register with a username already taken
+- The user may enter up to three phone numbers, which are stored in a separate table referencing the users table
+- The user must enter the correct username and password to successfully log into the app
+- When the user is logged out, the session is deleted, thereby preventing the use of stored information by a third party
